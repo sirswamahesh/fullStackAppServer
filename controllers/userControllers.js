@@ -61,8 +61,7 @@ const registerController = async (req, res) => {
 const LoginController = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("skdfjklsd", email, password);
-    console.log("step1");
+
     //validation
     if (!email || !password) {
       return res.status(400).send({
@@ -70,7 +69,7 @@ const LoginController = async (req, res) => {
         message: "Please Provide email or password",
       });
     }
-    console.log("step2");
+
     // find user
     const user = await userModel.findOne({ email });
     if (!user) {
@@ -79,7 +78,7 @@ const LoginController = async (req, res) => {
         message: "User Not Found",
       });
     }
-    console.log("step3");
+
     //match password
 
     const matchPassword = password === user.password;
@@ -89,10 +88,9 @@ const LoginController = async (req, res) => {
         message: "Invalid username or password",
       });
     }
-    // user.password = undefined;
+    user.password = undefined;
 
     //token
-    console.log("step4");
     const token = await JWT.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
