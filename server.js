@@ -21,7 +21,7 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "Welcome to full stack app",
+    message: "Welcome to full stack app mahesh",
   });
 });
 
