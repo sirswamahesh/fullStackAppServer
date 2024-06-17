@@ -1,12 +1,12 @@
 const express = require("express");
-const { requireSingIn } = require("../controllers/userController");
+const { requireSingIn } = require("../controllers/userControllers");
 const {
   createPostController,
   getAllPostsContoller,
   getUserPostsController,
   deletePostController,
   updatePostController,
-} = require("../controllers/postController");
+} = require("../controllers/postControllers");
 
 //router object
 const router = express.Router();
