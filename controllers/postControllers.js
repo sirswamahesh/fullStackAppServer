@@ -15,7 +15,7 @@ const createPostController = async (req, res) => {
     const post = await postModel({
       title,
       description,
-      postedBy: req.auth._id,
+      postedBy: req.auth.id,
     }).save();
     res.status(201).send({
       success: true,
