@@ -58,7 +58,7 @@ const getAllPostsContoller = async (req, res) => {
 // get user posts
 const getUserPostsController = async (req, res) => {
   try {
-    const userPosts = await postModel.find({ postedBy: req.auth._id });
+    const userPosts = await postModel.find({ postedBy: req.auth.id });
     res.status(200).send({
       success: true,
       message: "user posts",
