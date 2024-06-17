@@ -11,6 +11,7 @@ const createPostController = async (req, res) => {
         message: "Please Provide All Fields",
       });
     }
+    console.log("rhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",req);
     const post = await postModel({
       title,
       description,
