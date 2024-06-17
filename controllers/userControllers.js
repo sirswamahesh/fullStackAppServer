@@ -131,7 +131,8 @@ const updateUserController = async (req, res) => {
         name: name || user.name,
         password: password || user.password,
         email: email || user.email,
-      }
+      },
+      {new:true},
     );
 
     res.status(200).send({
